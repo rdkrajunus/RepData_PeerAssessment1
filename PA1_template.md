@@ -19,11 +19,11 @@ activity <- read.csv("activity.csv")
 
 
 ## What is mean total number of steps taken per day?
-1. Calculate the total number of steps taken per day:
+(1) Calculate the total number of steps taken per day:
 
 The code below will perform this calculation.
 
-2. If you do not understand the difference between a histogram and a barplot, 
+(2) If you do not understand the difference between a histogram and a barplot, 
 research the difference between them. Make a histogram of the total number of 
 steps taken each day
 
@@ -46,7 +46,7 @@ hist(totalStepsPerDay$totalSteps, main = "Histogram of Total Steps per Day",
 
 ![plot of chunk TotalStepsHistogram](figure/TotalStepsHistogram-1.png) 
 
-3. Calculate and report the mean and median of the total number of steps taken 
+(3) Calculate and report the mean and median of the total number of steps taken 
 per day
 
 Throughout this analysis, scalar values are presented using r code 
@@ -78,7 +78,7 @@ median(totalStepsPerDay$totalSteps)
 
 
 ## What is the average daily activity pattern?
-1. Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) 
+(1) Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) 
 and the average number of steps taken, averaged across all days (y-axis)
 
 The relationship between the average number of steps taken by interval across 
@@ -97,7 +97,7 @@ plot(x = avgDailyActivity$interval, y = avgDailyActivity$meanSteps,
 
 ![plot of chunk AverageDailyActivityTimeSeries](figure/AverageDailyActivityTimeSeries-1.png) 
 
-2. Which 5-minute interval, on average across all the days in the dataset, 
+(2) Which 5-minute interval, on average across all the days in the dataset, 
 contains the maximum number of steps?
 
 The 5-minute interval which contains the maximum number of steps across all days
@@ -113,7 +113,7 @@ avgDailyActivity$interval[which.max(x = avgDailyActivity$meanSteps)]
 
 
 ## Imputing missing values
-1. Calculate and report the total number of missing values in the dataset (i.e. 
+(1) Calculate and report the total number of missing values in the dataset (i.e. 
 the total number of rows with NAs)
 
 The total number of missing values in the dataset is computed by:
@@ -126,13 +126,13 @@ sum(is.na(activity))
 ## [1] 2304
 ```
 
-2. Devise a strategy for filling in all of the missing values in the dataset.
+(2) Devise a strategy for filling in all of the missing values in the dataset.
 The strategy does not need to be sophisticated. For example, you could use the 
 mean/median for that day, or the mean for that 5-minute interval, etc.
 
 The author has chosen to use the mean for that 5-minute interval.
 
-3. Create a new dataset that is equal to the original dataset but with the 
+(3) Create a new dataset that is equal to the original dataset but with the 
 missing data filled in.
 
 
@@ -143,7 +143,7 @@ activityPopulated <- activity %>%
                           steps))
 ```
 
-4. Make a histogram of the total number of steps taken each day and Calculate 
+(4) Make a histogram of the total number of steps taken each day and Calculate 
 and report the mean and median total number of steps taken per day.
 
 
@@ -194,7 +194,7 @@ mean and median of the distribution.
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
-1. Create a new factor variable in the dataset with two levels – “weekday” and 
+(1) Create a new factor variable in the dataset with two levels – “weekday” and 
 “weekend” indicating whether a given date is a weekday or weekend day.
 
 
@@ -207,7 +207,7 @@ activityPopulatedDayType <- activityPopulated %>%
 ```
 
 
-2. Make a panel plot containing a time series plot (i.e. type = "l") of the 
+(2) Make a panel plot containing a time series plot (i.e. type = "l") of the 
 5-minute interval (x-axis) and the average number of steps taken, averaged 
 across all weekday days or weekend days (y-axis).
 
